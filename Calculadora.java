@@ -1,28 +1,9 @@
 package calculadora;
 
-/**
- * Calculadora simples do aplicativo FinançApp.
- * Faz as operações de soma, subtração, multiplicação e divisão.
- *
- */
+// Classe que faz as contas da calculadora do FinançApp
 public class Calculadora {
 
-    /**
-     * Cria uma nova calculadora.
-     */
-    public Calculadora() {
-    }
-
-    /**
-     * Faz a conta entre dois números de acordo com a operação escolhida.
-     *
-     * @param numero1  primeiro número
-     * @param numero2  segundo número
-     * @param operacao "+", "-", "*" ou "/"
-     * @return resultado da conta
-     * @throws ArithmeticException      se tentar dividir por zero
-     * @throws IllegalArgumentException se a operação não for "+", "-", "*" ou "/"
-     */
+    // Recebe dois números e a operação (+, -, * ou /) e devolve o resultado
     public double calc(int numero1, int numero2, String operacao) {
         // Cada operação chama o seu próprio método
         if ("+".equals(operacao)) {
@@ -41,47 +22,22 @@ public class Calculadora {
         throw new IllegalArgumentException("Operação inválida!");
     }
 
-    /**
-     * Soma dois números.
-     *
-     * @param numero1 primeiro número
-     * @param numero2 segundo número
-     * @return soma dos números
-     */
+    // Soma dois números
     public double somar(int numero1, int numero2) {
         return numero1 + numero2;
     }
 
-    /**
-     * Subtrai o segundo número do primeiro.
-     *
-     * @param numero1 primeiro número
-     * @param numero2 segundo número
-     * @return diferença entre os números
-     */
+    // Subtrai o segundo número do primeiro
     public double subtrair(int numero1, int numero2) {
         return numero1 - numero2;
     }
 
-    /**
-     * Multiplica dois números.
-     *
-     * @param numero1 primeiro número
-     * @param numero2 segundo número
-     * @return produto dos números
-     */
+    // Multiplica dois números
     public double multiplicar(int numero1, int numero2) {
         return numero1 * numero2;
     }
 
-    /**
-     * Divide o primeiro número pelo segundo.
-     *
-     * @param numero1 dividendo
-     * @param numero2 divisor (não pode ser zero)
-     * @return resultado da divisão com casas decimais
-     * @throws ArithmeticException se o divisor for zero
-     */
+    // Divide o primeiro número pelo segundo, sem permitir divisão por zero
     public double dividir(int numero1, int numero2) {
         if (numero2 == 0) {
             throw new ArithmeticException("Não é possível dividir por zero!");
