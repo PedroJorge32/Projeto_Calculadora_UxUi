@@ -1,15 +1,39 @@
 package calculadora;
 
-// Testes da classe Calculadora: mostra entrada, resultado esperado e resultado obtido
+/**
+ * Testes unitários da classe {@link Calculadora}.
+ * <p>
+ * Cada teste mostra a entrada utilizada, o resultado esperado, o resultado
+ * obtido e se passou ou falhou. No final aparece o total de testes aprovados
+ * e reprovados.
+ * </p>
+ *
+ * @author Pedro
+ * @version 2.0
+ */
 public class TesteCalculadora {
 
-    // Calculadora usada em todos os testes
+    /** Calculadora usada em todos os testes. */
     static Calculadora calculadora = new Calculadora();
 
-    // Contadores de testes
+    /** Quantidade de testes que passaram. */
     static int passou = 0;
+
+    /** Quantidade de testes que falharam. */
     static int falhou = 0;
 
+    /**
+     * Cria a classe de testes.
+     */
+    public TesteCalculadora() {
+        // Os atributos já são inicializados na declaração
+    }
+
+    /**
+     * Executa todos os testes da calculadora.
+     *
+     * @param args argumentos da linha de comando (não utilizados)
+     */
     public static void main(String[] args) {
         System.out.println("===== TESTES DA CALCULADORA =====");
 
@@ -27,14 +51,28 @@ public class TesteCalculadora {
         mostrarResumo();
     }
 
-    // Compara o resultado esperado com o obtido
+    /**
+     * Compara o resultado esperado com o obtido.
+     *
+     * @param nome     nome do teste
+     * @param entrada  conta que foi feita
+     * @param esperado resultado esperado
+     * @param obtido   resultado que a calculadora devolveu
+     */
     static void testar(String nome, String entrada, double esperado, double obtido) {
         mostrarCabecalho(nome, entrada, String.valueOf(esperado));
         System.out.println("Obtido: " + obtido);
         registrar(esperado == obtido);
     }
 
-    // Executa uma conta que deve ser bloqueada e confere se a mensagem de erro apareceu
+    /**
+     * Executa uma conta que deve ser bloqueada e confere se a mensagem de erro apareceu.
+     *
+     * @param nome     nome do teste
+     * @param numero1  primeiro número
+     * @param numero2  segundo número
+     * @param operacao operação usada na conta
+     */
     static void testarErro(String nome, int numero1, int numero2, String operacao) {
         mostrarCabecalho(nome, numero1 + " " + operacao + " " + numero2, "mensagem de erro");
         try {
@@ -47,14 +85,24 @@ public class TesteCalculadora {
         }
     }
 
-    // Mostra o nome, a entrada e o resultado esperado do teste
+    /**
+     * Mostra o nome, a entrada e o resultado esperado do teste.
+     *
+     * @param nome     nome do teste
+     * @param entrada  conta que foi feita
+     * @param esperado resultado esperado
+     */
     static void mostrarCabecalho(String nome, String entrada, String esperado) {
         System.out.println("\nTeste: " + nome);
         System.out.println("Entrada: " + entrada);
         System.out.println("Esperado: " + esperado);
     }
 
-    // Mostra se o teste passou e atualiza os contadores
+    /**
+     * Mostra se o teste passou e atualiza os contadores.
+     *
+     * @param ok {@code true} se o teste passou; {@code false} se falhou
+     */
     static void registrar(boolean ok) {
         if (ok) {
             System.out.println("Status: PASSOU");
@@ -65,7 +113,9 @@ public class TesteCalculadora {
         }
     }
 
-    // Mostra o total de testes que passaram e falharam
+    /**
+     * Mostra o total de testes que passaram e falharam.
+     */
     static void mostrarResumo() {
         System.out.println("\n===== RESULTADO FINAL =====");
         System.out.println("Passaram: " + passou);
