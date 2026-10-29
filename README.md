@@ -9,10 +9,10 @@
 **Projeto:** Projeto Calculadora  
 **Contexto:** FinançApp  
 **Aluno:** Pedro Jorge  
-**RA:** XXXXXXX  
-**Curso:** Nome do curso  
-**Disciplina:** Nome da disciplina  
-**Professor:** Nome do professor  
+**RA:** 250972      
+**Curso:** Análise e Desenvolvimento de Sistemas      
+**Disciplina:** UX/UI e Teste de Software  
+**Professor:** Daniel Ohata  
 **Semestre:** 2026.2  
 **Repositório:** https://github.com/PedroJorge32/Projeto_Calculadora_UxUi
 
